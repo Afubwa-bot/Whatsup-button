@@ -1,0 +1,63 @@
+/* ------------------------------------------- */
+/* 1. Define the Green Color Variable */
+/* ------------------------------------------- */
+:root {
+  --waba-light-green: #25d366; 
+  --waba-dark-green: #1DA851; 
+}
+
+/* ------------------------------------------- */
+/* 2. Global Resets (As per your example) */
+/* ------------------------------------------- */
+* {
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+    /* Use a standard font for replication */
+    font-family:  Arial,sans-serif; 
+}
+button {
+    background: none;
+    border: none;
+    /* Reset default button styling */
+    appearance: none; 
+}
+
+/* ------------------------------------------- */
+/* 3. The Button Style (Your Code + Icon Spacing) */
+/* ------------------------------------------- */
+.ras-waba-button {
+    /* POSITIONING: Makes it fixed to the screen corner */
+    position: fixed; /* Changed from 'absolute' to 'fixed' for true floating behavior */
+    right: 20px; /* Added a small offset from the edge */
+    bottom: 20px; /* Added a small offset from the edge */
+    z-index: 999; /* Ensure it is on top of other content */
+
+    /* LAYOUT: Flex for icon and text alignment */
+    display: flex;
+    align-items: center; /* Vertical center alignment */
+    gap: 8px; /* Space between the icon and text */
+
+    /* APPEARANCE */
+    cursor: pointer;
+    color: #fff;
+    background: var(--waba-light-green);
+    
+    /* SHAPE */
+    border-radius: 9999999px; /* The pill shape */
+    padding: 8px 16px;
+
+    /* TEXT */
+    white-space: nowrap;
+    font-size: 16px;
+    font-weight: 500;
+
+    /* ANIMATION */
+    transition: background-color .2s ease-in-out, transform .2s ease-in-out;
+}
+
+/* HOVER EFFECT */
+.ras-waba-button:hover {
+    background: var(--waba-dark-green); /* Darker green on hover */
+    transform: translateY(-2px); /* Slight lift effect */
+}
